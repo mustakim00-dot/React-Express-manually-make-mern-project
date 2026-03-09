@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+/* @media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
+
+@theme {
+  --font-primary-font: "Montserrat", serif;
+  --color-primary-bg: #04040c;
+  --color-primary-text: #bc61f3;
+  --color-second-text: #f0f0f0;
+  --breakpoint-myXl: 1920px;
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+.container {
+  margin-inline: auto;
+}
+.slick-slide {
+  padding: 0px 25px;
+}
+.slick-dots .slick-active div {
+  background-color: #d9d8e2;
+}
+
+@layer components {
+  .x-container {
+    @apply max-w-4xl mx-auto;
+  }
+
+  .btn-linear,
+  .icon {
+    border: 5px solid transparent;
+    background: linear-gradient(
+      0deg,
+      rgba(188, 97, 243, 1) 0%,
+      rgba(92, 67, 246, 1) 100%
+    );
+    background-origin: border-box;
+    background-clip: border-box;
+  }
+
+  .gradient-border {
+    border: 5px solid transparent;
+    border-image: linear-gradient(
+      0deg,
+      rgba(188, 97, 243, 1) 0%,
+      rgba(92, 67, 246, 1) 100%
+    );
+    border-image-slice: 1;
+  }
+
+  .banner-heading {
+    background-image: url(./assets/Textbg.png);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .navItem {
+    @apply relative text-xl font-medium font-primary-font text-second-text;
+  }
+
+  .activeNavItem {
+    @apply text-primary-text  after:content-[''] after:w-full after:h-1 after:absolute after:-bottom-4 after:left-0 after:bg-[#3A3653] after:rounded-2xl hover:after:w-full;
+  }
+}
