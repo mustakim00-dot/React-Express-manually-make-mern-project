@@ -1,0 +1,10 @@
+.gitignore file তৈরি করুন
+.env
+imp.js
+imp.txt
+node_modules
+
+git commend
+rm -rf .git
+
+git config --global core.autocrlf true
